@@ -15,6 +15,31 @@
     </entry>
     
     
+    
+    <entry>
+      <title>Arrary 对象操作</title>
+      <link href="/2021/11/09/Arrary/"/>
+      <url>/2021/11/09/Arrary/</url>
+      
+        <content type="html"><![CDATA[<p>var a = [];</p><p>// 1.基于instanceof</p><p>a instanceof Array; // true</p><p>// 2.基于constructor</p><p>a.constructor === Array;  //true</p><p>// 3.基于Object.prototype.isPrototypeOf</p><p>Array.prototype.isPrototypeOf(a);</p><p>// 4.基于getPrototypeOf</p><p>Object.getPrototypeOf(a) === Array.prototype;</p><p>// 5.基于Object.prototype.toString</p><p>Object.prototype.toString.apply(a) === ‘[object Array]’;</p><p>//以上，除了Object.prototype.toString外，其它方法都不能正确判断变量的类型。</p><p>最好的方式：</p><pre class="line-numbers language-js" data-language="js"><code class="language-js">Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token operator">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span> length<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
